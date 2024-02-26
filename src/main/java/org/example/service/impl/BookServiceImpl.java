@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,8 +32,16 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(bookEntity);
     }
 
-    public Iterable<BookEntity> getBooks(){
-        return bookRepository.findAll();
+    public List<Book> getBooks(){
+        List<Book> bookDtoList=new ArrayList<>();
+        Iterable<BookEntity> bookEntities = bookRepository.findAll();
+
+        for (BookEntity bookEntity:bookEntities) {
+            Book bookDto = modelMapper.map(bookEntity, Book.class);
+            bookDtoList.add(bookDto);
+        }
+
+        return bookDtoList;
     }
 
     @Override
