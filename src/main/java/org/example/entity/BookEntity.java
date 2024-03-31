@@ -14,7 +14,7 @@ public class BookEntity {
     private Long id;
 //    @OneToOne(mappedBy = "isbn")
     private Long isbn;
-    private String tittle;
+    private String title;
     private String author;
     private String category;
     private Integer qty;

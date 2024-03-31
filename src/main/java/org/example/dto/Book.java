@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Book {
     private long id;
     private Long isbn;
-    private String tittle;
+    private String title;
     private String author;
     private String category;
     private Integer qty;
