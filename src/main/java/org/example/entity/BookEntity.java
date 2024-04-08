@@ -12,7 +12,6 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-//    @OneToOne(mappedBy = "isbn")
     private Long isbn;
     private String title;
     private String author;
